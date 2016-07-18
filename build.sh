@@ -26,5 +26,6 @@ do
 
     docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
                   -v "$(which docker)":/usr/bin/docker \
+                  --name ${application} \
                   ${application}
 done
