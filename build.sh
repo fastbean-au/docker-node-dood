@@ -8,6 +8,7 @@
 # bilities fully, or even reasonably, we're not going to use it at all.
 ####################################################################################################
 
+####################################################################################################
 # Build the base image
 docker build -t node-dood-base .
 
@@ -15,6 +16,8 @@ if [ ! -d "./applications" ]; then
     mkdir ./applications
 fi
 
+####################################################################################################
+# Build and run each application
 for application in "$@"
 do
     echo Building: ${application}
@@ -27,7 +30,24 @@ do
     IFS='/' read -ra NAME <<< "$application"
 
     docker run -d -P --name ${NAME[-1]} \
-                  -v /var/run/docker.sock:/var/run/docker.sock \
-                  -v "$(which docker)":/usr/bin/docker \
-                  ${application}
+               -v /var/run/docker.sock:/var/run/docker.sock \
+               -v "$(which docker)":/usr/bin/docker \
+               ${application}
 done
+
+####################################################################################################
+# Display all port mappings for the applications 
+echo
+echo
+for application in "$@"
+do
+    echo ================================================================================
+    echo Port mappings for: ${application}
+    IFS='/' read -ra NAME <<< "$application"
+    docker port ${NAME[-1]}
+done
+
+echo
+echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo Finsihed.
+echo ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

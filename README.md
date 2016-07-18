@@ -27,3 +27,5 @@ COPY  . /application/
 RUN cd /application \
     && npm install --production
 ```
+
+Any ports exposed by the container will be randomly mapped and exposed on the Docker host.
