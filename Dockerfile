@@ -1,6 +1,6 @@
 FROM node
  
-MAINTAINER fastbean-au <fastbean_au@yahoo.com.au>
+MAINTAINER fastbean-au <fastbeanau@gmail.com>
 
 USER root
 RUN apt-get update \
