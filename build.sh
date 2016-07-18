@@ -22,9 +22,9 @@ do
         git clone https://github.com/${application} applications/${application}
     fi
     
-    docker build -t ${application} ./applications/${application}
+    docker build --no-cache -t ${application} ./applications/${application}
 
     docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
-                  -v $(which docker):/usr/bin/docker \
+                  -v "$(which docker)":/usr/bin/docker \
                   ${application}
 done
