@@ -1,7 +1,5 @@
-.git/
+.git*
 
-applications/
-
-.gitignore
+applications
 
 build.sh
