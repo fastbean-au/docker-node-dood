@@ -1,4 +1,13 @@
+# Node stuff
 node_modules
-build.sh
+*.tgz
+
+# Shell scripts - the other utilities for this package.
+*.sh
+
+# Docker files
 Dockerfile
+.dockerignore
+
+# Node-DooD applications
 applications

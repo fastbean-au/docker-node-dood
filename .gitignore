@@ -1,2 +1,7 @@
 /applications/*
+
+# Node stuff
 node_modules
+
+# NPM pack output
+*.tgz

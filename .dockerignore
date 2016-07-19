@@ -7,3 +7,6 @@ build.sh
 package.json
 *.js
 .npmignore
+
+# NPM pack output
+*.tgz
