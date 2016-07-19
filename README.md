@@ -6,12 +6,11 @@ Useful for when you need a Docker container or containers to interact with Docke
 
 ## Usage
 
-
 The bash script _build.sh_ is used to create a base application image, and one or more applications as passed on the command line.  The applications can either already exist within a _./applications_ directory, or can be GitHub repositories (using the form of organisation/repo or user/repo), or a mixture of both.
 
 E.g.:
 
-```
+```bash
 ./build.sh fastbeanau/my-app-persistence-layer fastbeanau/my-app-api-layer fastbeanau/my-app-ui-layer 
 ```
 
@@ -29,3 +28,10 @@ RUN cd /application \
 ```
 
 Any ports exposed by the container will be randomly mapped and exposed on the Docker host.
+
+Specific configuration settings for individual container(s) (once created) can be set by using the [docker update command](https://docs.docker.com/engine/reference/commandline/update/), e.g.
+
+```bash
+docker update --restart=unless-stopped my-app-persistence-layer
+docker update --restart=on-failure:10 my-app-api-layer my-app-ui-layer
+```
