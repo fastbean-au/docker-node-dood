@@ -27,9 +27,11 @@ RUN cd /application \
     && npm install --production
 ```
 
-Any ports exposed by the container will be randomly mapped and exposed on the Docker host.
+## Notes
 
-Specific configuration settings for individual container(s) (once created) can be set by using the [docker update command](https://docs.docker.com/engine/reference/commandline/update/), e.g.
+* Any ports exposed by the container will be randomly mapped and exposed on the Docker host. This mapping _will_ change on container start & restart, you may wish to consider using a discovery/registry service if this is an issue. 
+
+* Specific configuration settings for individual container(s) (once created) can be set by using the [docker update](https://docs.docker.com/engine/reference/commandline/update/) command, e.g.
 
 ```bash
 docker update --restart=unless-stopped my-app-persistence-layer
