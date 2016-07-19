@@ -1,0 +1,26 @@
+{
+  "name": "dood-utils",
+  "version": "0.1.0",
+  "description": "Utils to support Node running in a Docker-out-of-Docker (DooD) container.",
+  "main": "dood-utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastbean-au/docker-node-dood.git"
+  },
+  "keywords": [
+    "docker",
+    "dood"
+  ],
+  "author": {
+    "name": "fastbean-au",
+    "email": "fastbeanau@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fastbean-au/docker-node-dood/issues"
+  },
+  "homepage": "https://github.com/fastbean-au/docker-node-dood#readme"
+}

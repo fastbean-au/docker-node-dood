@@ -3,3 +3,7 @@
 applications
 
 build.sh
+
+package.json
+*.js
+.npmignore
