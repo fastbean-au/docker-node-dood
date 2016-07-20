@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/fastbean-au/docker-node-dood/issues"
   },
-  "homepage": "https://github.com/fastbean-au/docker-node-dood#readme"
+  "homepage": "https://github.com/fastbean-au/docker-node-dood#readme",
+  "dependencies": {
+    "request": "^2.73.0"
+  }
 }

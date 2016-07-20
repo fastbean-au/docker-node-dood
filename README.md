@@ -31,10 +31,10 @@ RUN cd /application \
 
 ### Node Utilities
 
-A Node script containing a helper method is also included in this repository (and published to NPM as dood-utils). 
+A Node script containing a helper method is also included in this repository (and published to NPM as [dood-utils](https://www.npmjs.com/package/dood-utils)). 
 
 ```bash
-npm install dood-utils
+npm install --save dood-utils
 ```
 
 Within your scripts:
